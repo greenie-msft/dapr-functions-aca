@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "route": "state",
+      "methods": [
+        "post",
+        "get"
+      ],
+      "authLevel": "anonymous",
+      "name": "req"
+    },
+    {
+      "type": "daprState",
+      "direction": "out",
+      "name": "daprSaveState",
+      "stateStore": "statestore",
+      "daprAddress": "http://localhost:3500"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
